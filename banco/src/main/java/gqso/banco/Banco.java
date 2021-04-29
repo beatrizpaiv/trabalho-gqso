@@ -1,7 +1,7 @@
 package gqso.banco;
 
 public class Banco {
-    private double saldo;
+    private double saldo = 100;
 
     public double deposito(double valor) {
         this.saldo -= valor;
