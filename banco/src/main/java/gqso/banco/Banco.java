@@ -18,7 +18,7 @@ public class Banco {
     }
 
     public double saque(double valor) {
-        this.saldo = valor;
+        this.saldo -= valor;
         return saldo();
     }
 
