@@ -1,9 +1,12 @@
 package gqso.banco;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import gqso.banco.Banco.SaldoInsuficiente;
 
 public class BancoTeste {
     Banco banco;
@@ -14,7 +17,8 @@ public class BancoTeste {
     }
 
     @Test
-    public void testeDeposito() {
+    public void testeDeposito() throws SaldoInsuficiente{
         assertEquals(0, banco.deposito(100));
+        assertThrows(Banco.SaldoInsuficiente.class, () -> banco.deposito(100));
     }
 }
