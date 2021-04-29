@@ -9,19 +9,22 @@ public class Banco {
 
     private double saldo = 100;
 
-    public double deposito(double valor) throws SaldoInsuficiente {
+    public double saque(double valor) throws SaldoInsuficiente {
         if(saldo() < valor) {
             throw new SaldoInsuficiente();
         }
-        this.saldo += valor;
+        setSaldo(saldo() - valor);
         return saldo();
     }
 
-    public double saque(double valor) {
-        this.saldo -= valor;
+    public double deposito(double valor) {
+        setSaldo(saldo() + valor);
         return saldo();
     }
 
+    private void setSaldo(double saldo) {
+        this.saldo = saldo;
+    }
     public double saldo() {
         return this.saldo;
     }

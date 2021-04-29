@@ -17,13 +17,13 @@ public class BancoTeste {
     }
 
     @Test
-    public void testeDeposito() throws SaldoInsuficiente{
-        assertEquals(0, banco.deposito(100));
-        assertThrows(Banco.SaldoInsuficiente.class, () -> banco.deposito(100));
+    public void testeSaque() throws SaldoInsuficiente{
+        assertEquals(0, banco.saque(100));
+        assertThrows(Banco.SaldoInsuficiente.class, () -> banco.saque(100));
     }
 
     @Test
-    public void testeSaque() {
-        assertEquals(0, banco.saque(100));
+    public void testeDeposito() {
+        assertEquals(200, banco.deposito(100));
     }
 }
