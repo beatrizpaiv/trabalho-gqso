@@ -21,4 +21,9 @@ public class BancoTeste {
         assertEquals(0, banco.deposito(100));
         assertThrows(Banco.SaldoInsuficiente.class, () -> banco.deposito(100));
     }
+
+    @Test
+    public void testeSaque() {
+        assertEquals(0, banco.saque(100));
+    }
 }

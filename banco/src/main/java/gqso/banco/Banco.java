@@ -17,6 +17,11 @@ public class Banco {
         return saldo();
     }
 
+    public double saque(double valor) {
+        this.saldo = valor;
+        return saldo();
+    }
+
     public double saldo() {
         return this.saldo;
     }
