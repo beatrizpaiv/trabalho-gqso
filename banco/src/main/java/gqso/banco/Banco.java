@@ -13,7 +13,7 @@ public class Banco {
         if(saldo() < valor) {
             throw new SaldoInsuficiente();
         }
-        this.saldo -= valor;
+        this.saldo += valor;
         return saldo();
     }
 
